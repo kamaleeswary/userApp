@@ -1,0 +1,16 @@
+<!-- main app container -->
+<div class="jumbotron" >
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+            <mat-toolbar class="login-toolbar" color="primary">User Detail App
+              <div  class="login-btn">
+              <button mat-raised-button *ngIf="showButton"  (click)="login()">Login</button>
+              </div>
+            </mat-toolbar>
+
+          </div>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
