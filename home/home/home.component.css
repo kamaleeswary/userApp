@@ -1,0 +1,20 @@
+table {
+    width: 100%;
+  }
+
+.home-container {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+  }
+
+  .home-content {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .logout {
+    float: right;
+    margin-right: 3rem;
+  }

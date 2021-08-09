@@ -1,0 +1,35 @@
+<div class="mat-elevation-z8 home-container" >
+ <div class="home-content">
+  <div class="logout">
+    <button mat-raised-button  (click)="logout()">logout </button>
+   </div>
+  <table mat-table [dataSource]="dataSource">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- First Name Column -->
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef> First Name  </th>
+      <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+    </ng-container>
+
+  <!-- Last Name Column -->
+  <ng-container matColumnDef="last_name">
+    <th mat-header-cell *matHeaderCellDef> Last Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+  </ng-container>
+
+    <!-- email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+ </div>
+</div>

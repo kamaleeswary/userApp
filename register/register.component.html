@@ -1,0 +1,60 @@
+<div class="register-container">
+    <div class="register-content">
+        <mat-toolbar class="register-toolbar" color="primary">Register</mat-toolbar>
+          <mat-card>
+            <form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <div class="form-group">
+                        <input type="text" formControlName="firstName" placeholder="First Name" matInput
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required"></div>
+                        </div>
+                    </div>
+                </mat-form-field>
+                <mat-form-field>
+                    <div class="form-group">
+                        <input type="text" formControlName="lastName" placeholder="Last Name" matInput
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required"></div>
+                        </div>
+                    </div>
+                </mat-form-field>
+                <mat-form-field>
+                    <div class="form-group">
+                        <input type="text" formControlName="username" placeholder="Username" matInput
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                            <div *ngIf="f.username.errors.required"></div>
+                        </div>
+                    </div>
+                </mat-form-field>
+                <mat-form-field>
+                    <div class="form-group">
+                        <input type="text" formControlName="email" placeholder="email" matInput class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required"></div>
+                        </div>
+                    </div>
+                </mat-form-field>
+                <mat-form-field>
+                    <div class="form-group">
+                        <input type="password" formControlName="password" placeholder="Password" matInput
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required"></div>
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
+                    </div>
+                </mat-form-field>
+                <div class="form-group">
+                    <button [disabled]="loading" mat-raised-button class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Register
+                    </button>
+                    <a mat-raised-button routerLink="/login" class="btn btn-link">Cancel</a>
+                </div>
+            </form>
+        </mat-card>
